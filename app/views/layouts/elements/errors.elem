@@ -1,0 +1,14 @@
+<?php
+if (!empty($_SESSION['errors'])  && is_array($_SESSION['errors'])) {
+?>
+<div class="alert alert-danger" role="alert">
+  <h4>Errors:</h4>
+  <?php
+    foreach ($_SESSION['errors'] as $msg) {
+        echo "- " . $msg . "<br>";
+    }
+?>
+</div>
+<?php
+  $_SESSION['errors'] = [];
+}
